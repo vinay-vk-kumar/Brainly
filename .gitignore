@@ -38,3 +38,6 @@ logs/
 
 # TypeScript cache
 *.tsbuildinfo
+
+#text
+*.txt

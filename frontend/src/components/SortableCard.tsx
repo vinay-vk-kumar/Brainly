@@ -26,7 +26,6 @@ export const SortableCard = ({ id, content, onDelete, onEdit, onPin, onExpand, o
         transform: CSS.Transform.toString(transform),
         transition,
         opacity: isDragging ? 0.4 : 1,
-        touchAction: 'none' // Prevent scrolling on mobile while dragging
     };
 
     return (

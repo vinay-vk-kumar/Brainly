@@ -185,7 +185,7 @@ function DashBoard() {
                 onClose={() => setMobileMenuOpen(false)}
             />
 
-            <div className='flex-1 ml-0 md:ml-64 p-4 md:p-8 transition-all duration-300 ease-out'>
+            <div className='flex-1 ml-0 md:ml-64 p-4 md:p-8 transition-[margin] duration-300 ease-in-out'>
                 <CreateContentModal
                     open={modalOpen}
                     onClose={handleModalClose}

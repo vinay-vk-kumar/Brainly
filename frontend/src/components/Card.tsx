@@ -371,13 +371,13 @@ export const Card = ({ _id, title, link, type, content, metadata, shareHash: ini
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.4 }}
-            className={`bg-white/95 dark:bg-gray-800/95 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100/90 dark:border-gray-700/90 p-5 transition-all duration-300 hover:-translate-y-0.5 flex flex-col w-full relative group backdrop-blur-sm ${showFullContent ? 'min-h-[200px]' : 'min-h-[360px] sm:h-[500px] overflow-hidden'} ${isPinned ? 'ring-2 ring-indigo-500/20 dark:ring-indigo-400/20' : ''}`}
+            className={`bg-white/95 dark:bg-gray-800/95 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100/90 dark:border-gray-700/90 p-5 transition-[box-shadow,transform,border-color] duration-200 hover:-translate-y-0.5 flex flex-col w-full relative group backdrop-blur-sm ${showFullContent ? 'min-h-[200px]' : 'min-h-[360px] sm:h-[500px] overflow-hidden'} ${isPinned ? 'ring-2 ring-indigo-500/20 dark:ring-indigo-400/20' : ''}`}
         >
             {/* Drag Handle - Only if NOT pinned */}
             {dragHandleProps && !isPinned && (
                 <div
                     {...dragHandleProps}
-                    className="absolute top-6 left-2 p-1 text-gray-300 dark:text-gray-600 cursor-grab active:cursor-grabbing hover:bg-gray-100 dark:hover:bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                    className="absolute top-6 left-2 p-1 text-gray-300 dark:text-gray-600 cursor-grab active:cursor-grabbing hover:bg-gray-100 dark:hover:bg-gray-700 rounded opacity-0 group-hover:opacity-100 transition-opacity z-10 touch-none"
                     title="Drag to reorder"
                 >
                     <GripVertical size={20} />

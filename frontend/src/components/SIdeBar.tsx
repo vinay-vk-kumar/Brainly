@@ -25,13 +25,13 @@ export const SideBar = ({ activeFilter, onSelect, isOpen, onClose }: SideBarProp
             {/* Mobile Overlay */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 z-20 bg-black/45 backdrop-blur-[2px] transition-opacity duration-300 md:hidden"
+                    className="fixed inset-0 z-20 bg-black/50 md:hidden"
                     onClick={onClose}
                     aria-hidden
                 />
             )}
 
-            <div className={`w-64 h-screen max-h-screen fixed border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 left-0 top-0 flex flex-col z-30 transition-transform duration-300 ease-out shadow-xl shadow-gray-900/5 dark:shadow-black/30 md:translate-x-0 md:shadow-none ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className={`w-64 h-screen max-h-screen fixed border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 left-0 top-0 flex flex-col z-30 transition-transform duration-300 ease-in-out will-change-transform shadow-xl shadow-gray-900/5 dark:shadow-black/30 md:translate-x-0 md:shadow-none ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="shrink-0 pt-6 px-6">
                     <div className="flex justify-between items-center gap-2">
                         <div className="flex items-center gap-2 text-2xl font-bold text-indigo-600 dark:text-indigo-400 cursor-pointer" onClick={() => onSelect('all')}>
