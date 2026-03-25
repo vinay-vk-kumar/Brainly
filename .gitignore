@@ -1,0 +1,40 @@
+
+# Node / npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Environment variables — NEVER commit these
+.env
+.env.*
+!.env.example
+
+
+# TypeScript build output
+dist/
+build/
+dis/
+
+# Vite / frontend build
+frontend/dist/
+frontend/build/
+
+# Uploads (user-created files)
+backend/uploads/
+
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Logs
+logs/
+*.log
+
+# TypeScript cache
+*.tsbuildinfo

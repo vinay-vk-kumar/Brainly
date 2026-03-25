@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="brain" x1="12" y1="12" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#e0e7ff" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Brain shape (simplified, two-lobe) -->
+  <!-- Left lobe -->
+  <path d="
+    M32 18
+    C32 18 24 16 20 20
+    C16 24 15 28 16 32
+    C17 36 18 39 20 41
+    C22 43 26 44 28 43
+    C30 42 32 40 32 40
+    L32 18Z
+  " fill="url(#brain)" opacity="0.95"/>
+
+  <!-- Right lobe -->
+  <path d="
+    M32 18
+    C32 18 40 16 44 20
+    C48 24 49 28 48 32
+    C47 36 46 39 44 41
+    C42 43 38 44 36 43
+    C34 42 32 40 32 40
+    L32 18Z
+  " fill="url(#brain)" opacity="0.85"/>
+
+  <!-- Center stem -->
+  <rect x="30.5" y="18" width="3" height="22" rx="1.5" fill="url(#brain)" opacity="0.6"/>
+
+  <!-- Left lobe folds (detail lines) -->
+  <path d="M22 26 Q19 29 21 33" stroke="#6366f1" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M23 33 Q20 36 22 39" stroke="#6366f1" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Right lobe folds -->
+  <path d="M42 26 Q45 29 43 33" stroke="#8b5cf6" stroke-width="1.4" stroke-linecap="round" opacity="0.5"/>
+  <path d="M41 33 Q44 36 42 39" stroke="#8b5cf6" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Bottom curve / chin -->
+  <path d="M20 41 Q26 48 32 47 Q38 48 44 41" stroke="url(#brain)" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.9"/>
+</svg>
