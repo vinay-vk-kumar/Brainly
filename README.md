@@ -17,6 +17,8 @@
 
 ---
 
+<img src="frontend/src/assets/DashBoard.png"/>
+
 ## ✨ Features
 
 | Category | Feature |
