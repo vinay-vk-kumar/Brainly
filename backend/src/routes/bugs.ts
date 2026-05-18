@@ -2,7 +2,6 @@ import express, { Request, Response } from "express";
 import { authMiddleware } from "../middleware/authMiddleware";
 import { BugModel, UserModel } from "../Db";
 import { upload, uploadToCloudinary } from "../middleware/upload";
-import { z } from "zod";
 
 const router = express.Router();
 

@@ -81,7 +81,7 @@ router.delete("/content", authMiddleware, async (req: newRequest, res: Response)
     const contentId = req.body.contentId;
 
     try {
-        await ContentModel.deleteMany({
+        await ContentModel.deleteOne({
             _id: contentId,
             userId: req.userId
         })
@@ -208,7 +208,6 @@ router.get("/brain/:shareLink", async (req, res) => {
             userId: link.userId
         })
 
-        console.log(link);
         const user = await UserModel.findOne({
             _id: link.userId
         })

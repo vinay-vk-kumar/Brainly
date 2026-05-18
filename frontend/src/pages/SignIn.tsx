@@ -73,6 +73,7 @@ export const SignIn = () => {
                 token: credentialResponse.credential
             });
             localStorage.setItem("Authorization", response.data.token);
+            localStorage.setItem("role", response.data.role || "user");
             toast.success("Welcome back!");
             navigate("/dashboard");
         } catch (e) {
