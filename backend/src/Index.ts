@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config({ path: './src/.env' });
+dotenv.config(); // reads .env from cwd locally; on Render env vars are injected directly
 
 import express from "express";
 import mongoose from "mongoose";
@@ -30,7 +30,7 @@ app.use(cors({
         if (!origin || !allowed || allowed === '*' || origin === allowed) {
             callback(null, true);
         } else {
-            callback(null, true); // temporarily allow all in dev; restrict in prod
+            callback(new Error(`CORS: origin '${origin}' is not allowed`));
         }
     },
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
