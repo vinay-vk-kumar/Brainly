@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { authMiddleware } from "../middleware/authMiddleware";
-import { BugModel, UserModel } from "../Db"; // Ensure UserModel is imported if needed for role check
-import { upload } from "../middleware/upload";
+import { BugModel, UserModel } from "../Db";
+import { upload, uploadToCloudinary } from "../middleware/upload";
 import { z } from "zod";
 
 const router = express.Router();
@@ -11,11 +11,21 @@ router.post("/", authMiddleware, upload.single("image"), async (req: Request, re
     try {
         const { description, priority } = req.body;
         const userId = (req as any).userId;
-        const imageUrl = req.file ? `/uploads/${req.file.filename}` : undefined;
 
         if (!description) {
             res.status(400).json({ success: false, message: "Description is required" });
             return;
+        }
+
+        // Upload image to Cloudinary if provided
+        let imageUrl: string | undefined;
+        if (req.file) {
+            try {
+                imageUrl = await uploadToCloudinary(req.file.buffer, "brainly/bugs");
+            } catch (uploadErr) {
+                console.error("Cloudinary upload error:", uploadErr);
+                // Continue without image rather than failing the whole report
+            }
         }
 
         await BugModel.create({

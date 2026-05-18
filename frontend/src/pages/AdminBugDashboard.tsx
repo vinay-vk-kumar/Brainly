@@ -218,7 +218,7 @@ export const AdminBugDashboard = () => {
                                 <div className="px-5 pb-4 flex justify-between items-center gap-2">
                                     {bug.imageUrl ? (
                                         <button
-                                            onClick={() => setSelectedImage(`${BACKEND_URL}${bug.imageUrl}`)}
+                                            onClick={() => setSelectedImage(bug.imageUrl!)}
                                             className="flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 font-medium"
                                         >
                                             <Eye size={14} /> View Screenshot

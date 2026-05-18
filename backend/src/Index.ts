@@ -9,7 +9,8 @@ import userRouter from "./routes/user";
 import contentRouter from "./routes/content"
 import tokenRouter from "./routes/validateToken"
 import bugRouter from "./routes/bugs"
-import path from "path"
+
+
 
 const app = express();
 
@@ -48,7 +49,7 @@ app.use("/api/v1", userRouter)
 app.use("/api/v1", contentRouter)
 app.use("/api/v1", tokenRouter)
 app.use("/api/v1/bugs", bugRouter)
-app.use("/uploads", express.static(path.join(__dirname, "../uploads")))
+
 
 app.listen(process.env.PORT, async () => {
     console.log("Trying to Connect DB")
